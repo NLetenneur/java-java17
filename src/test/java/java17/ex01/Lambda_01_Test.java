@@ -39,12 +39,8 @@ public class Lambda_01_Test {
 		List<Person> personList = Data.buildPersonList(100);
 
 		// TODO result ne doit contenir que des personnes adultes (age >= 18)
-		PersonPredicate predicate = new PersonPredicate() {
-			@Override
-			public boolean test(Person p) {
-				return p.getAge() >= 18;
-			}
-		};
+		PersonPredicate predicate = p  -> p.getAge() >= 18;
+			
 		List<Person> result = filter(personList, predicate);
 
 		assert result.size() == 83;
@@ -62,12 +58,8 @@ public class Lambda_01_Test {
 		List<Person> personList = Data.buildPersonList(100);
 
 		// TODO result ne doit contenir que des personnes dont le prénom est "first_10"
-		PersonPredicate predicate = new PersonPredicate() {
-			@Override
-			public boolean test(Person p) {
-				return p.getFirstname().contentEquals("first_10");
-			}
-		};
+		PersonPredicate predicate = p ->p.getFirstname().contentEquals("first_10");
+		
 		List<Person> result = filter(personList, predicate);
 
 		assert result.size() == 1;
@@ -88,20 +80,12 @@ public class Lambda_01_Test {
 		// hash du mot de passe correspond à la valeur de la variable passwordSha512Hex
 		// TODO Pour obtenir le hash d'un mot, utiliser la méthode
 		// DigestUtils.sha512Hex(mot)
-		PersonPredicate predicate1 = new PersonPredicate() {
-			@Override
-			public boolean test(Person p) {
-				return DigestUtils.sha512Hex(p.getPassword()).contains(passwordSha512Hex);
-			}
-		};
+		PersonPredicate predicate1 = p -> DigestUtils.sha512Hex(p.getPassword()).contains(passwordSha512Hex);
+		
 		List<Person> result1 = filter(personList, predicate1);
 		
-		PersonPredicate predicate2 = new PersonPredicate() {
-			@Override
-			public boolean test(Person p) {
-				return p.getAge() > 49;
-			}
-		};
+		PersonPredicate predicate2 = p -> p.getAge() > 49;
+
 		List<Person> result = filter(result1, predicate2);
 
 		assert result.size() == 6;

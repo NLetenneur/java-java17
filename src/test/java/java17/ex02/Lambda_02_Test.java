@@ -38,12 +38,7 @@ public class Lambda_02_Test {
 
         // TODO transformer la liste de personnes en liste de comptes
         // TODO tous les objets comptes ont un solde à 100 par défaut
-        PersonToAccountMapper mapper1 = new PersonToAccountMapper() {
-            @Override
-            public Account map(Person p) {
-                return new Account(p, 100);
-            }
-        };
+        PersonToAccountMapper mapper1 = p -> new Account(p, 100);            
         
         List<Account> result = map(personList, mapper1);
 
