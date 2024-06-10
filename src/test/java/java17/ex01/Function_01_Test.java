@@ -21,13 +21,9 @@ public class Function_01_Test {
 	// TODO le nom sera de la forme "last_<ENTIER>"
 	// TODO l'age sera de la forme "<ENTIER>"
 	// TODO le mot de passe sera de la forme "pass_<ENTIER>"
-	private Function<Integer, Person> intToPerson = new Function<>() {
-		@Override
-		public Person apply(Integer t) {
+	private Function<Integer, Person> intToPerson = t -> {
 			Person personne = new Person("first_" + t, "last_" + t, t, "pass_" + t);
 			return personne;
-		}
-
 	};
 
 	// end::intToPerson[]
@@ -50,16 +46,11 @@ public class Function_01_Test {
 	// TODO Compléter la définition de cette fonction
 	// TODO la propriété owner est valorisé avec la personne en paramètre
 	// TODO la propriété balance est valorisé à 1000
-	private Function<Person, Account> personToAccount = new Function<>() {
-
-		@Override
-		public Account apply(Person t) {
+	private Function<Person, Account> personToAccount = t -> {
 			Account compte = new Account();
 			compte.setOwner(t);
 			compte.setBalance(1000);
 			return compte;
-		}
-
 	};
 	// end::personToAccount[]
 

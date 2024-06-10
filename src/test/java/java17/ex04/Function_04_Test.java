@@ -31,14 +31,7 @@ public class Function_04_Test {
     // tag::adult[]
     // TODO Compléter la fonction
     // TODO AGE >=18
-    Predicate<Person> adult = new Predicate<>() {
-
-		@Override
-		public boolean test(Person t) {
-			return t.getAge()>=18;
-		}
-    	
-    };
+    Predicate<Person> adult = t-> t.getAge()>=18;
     // end::adult[]
 
     @Test
@@ -58,26 +51,12 @@ public class Function_04_Test {
     // tag::predicateand[]
     // TODO compléter la fonction
     // TODO le prédicat vérifie que le nom est "France"
-    Predicate<Person> lastnameIsFrance = new Predicate<>() {
-
-		@Override
-		public boolean test(Person t) {
-			return t.getLastname().equals("France");
-		}
-    	
-    };
-
-
+    Predicate<Person> lastnameIsFrance = t -> t.getLastname().equals("France");
+   
     // TODO compléter la fonction
     // TODO le prédicat vérifie que le prénom est "Armor"
-    Predicate<Person> firstnameIsArmor = new Predicate<>() {
-
-		@Override
-		public boolean test(Person t) {
-			return t.getFirstname().equals("Armor");
-		}
-    	
-    };
+    Predicate<Person> firstnameIsArmor = t -> t.getFirstname().equals("Armor");
+		
     // end::predicateand[]
 
     @Test

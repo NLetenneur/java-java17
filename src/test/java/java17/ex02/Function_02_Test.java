@@ -15,16 +15,11 @@ public class Function_02_Test {
 	// tag::buildAccount[]
 	// TODO Compléter la fonction buildAccount
 	// TODO la fonction possède 2 paramètres en entrée : une personne et un solde
-	BiFunction<Person, Integer, Account> buildAccount = new BiFunction<>() {
-
-		@Override
-		public Account apply(Person t, Integer u) {
+	BiFunction<Person, Integer, Account> buildAccount = (Person t, Integer u) -> {
 			Account compte = new Account();
 			compte.setBalance(u);
 			compte.setOwner(t);
 			return compte;
-		}
-
 	};
 	// end::buildAccount[]
 

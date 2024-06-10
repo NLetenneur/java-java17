@@ -19,14 +19,8 @@ public class Function_07_Test {
     // end::format[]
 
     // TODO définir sum pour que le test test_format_sum() soit passant
-    IntBinaryOperator sum = new IntBinaryOperator() {
-
-		@Override
-		public int applyAsInt(int left, int right) {
-			return left+right;
-		}
-    };
-
+    IntBinaryOperator sum = (int left, int right) -> left+right;
+		
     @Test
     public void test_format_sum() throws Exception {
 
@@ -36,13 +30,7 @@ public class Function_07_Test {
     }
 
     // TODO définir substract afin que le test test_format_subtract() soit passant
-    IntBinaryOperator substract = new IntBinaryOperator() {
-
-		@Override
-		public int applyAsInt(int left, int right) {
-			return left-right;
-		}
-    };
+    IntBinaryOperator substract = (int left, int right) -> left-right;
 
     @Test
     public void test_format_subtract() throws Exception {
