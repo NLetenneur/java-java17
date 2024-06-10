@@ -51,7 +51,6 @@ public class Stream_01_Test {
 
 		// TODO valider si au moins une pizza à un prix >= 1300
 		Boolean result1 = pizzas.stream().anyMatch(p->p.getPrice()>= 1300);
-		System.out.println(result1);
 
 		// TODO valider si au moins une pizza à un prix >= 2000
 		Boolean result2 = pizzas.stream().anyMatch(p->p.getPrice()>= 2000);
